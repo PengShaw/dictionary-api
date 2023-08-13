@@ -5,7 +5,16 @@ description = "Add your description here"
 authors = [
     { name = "PengShaw", email = "hhxp9106@gmail.com" }
 ]
-dependencies = []
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.2",
+    "sqlmodel>=0.0.8",
+    "python-dotenv>=1.0.0",
+    "psycopg2-binary>=2.9.7",
+    "flask>=2.3.2",
+    "fire>=0.5.0",
+    "redis>=4.6.0",
+]
 readme = "README.md"
 requires-python = ">= 3.8"
 
@@ -15,7 +24,9 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "black>=23.7.0",
+]
 
 [tool.hatch.metadata]
 allow-direct-references = true

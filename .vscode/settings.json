@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "python.formatting.provider": "black",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    },
+    "files.watcherExclude": {
+        "**/__pycache__/**": true
+    }
+}
