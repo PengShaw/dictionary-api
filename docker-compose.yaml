@@ -2,6 +2,36 @@ version: '3.1'
 
 services:
 
+  server:
+    image: dictionary-api
+    restart: always
+    env_file:
+      - .env
+    command: ["python", "manage.py", "run_server"]
+    ports:
+      - 5000:5000
+    links:
+      - db
+      - redis
+    volumes:
+      - ./data:/dictionary-api/data
+      - ./app:/dictionary-api/app
+      - ./manage.py:/dictionary-api/manage.py
+
+  worker:
+    image: dictionary-api
+    restart: always
+    env_file:
+      - .env
+    command: ["python", "manage.py", "run_worker"]
+    links:
+      - db
+      - redis
+    volumes:
+      - ./data:/dictionary-api/data
+      - ./app:/dictionary-api/app
+      - ./manage.py:/dictionary-api/manage.py
+
   db:
     image: postgres
     restart: always

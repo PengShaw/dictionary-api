@@ -36,7 +36,7 @@ class Settings(BaseSettings):
     SERVER_PORT: int = 5000
     SERVER_HOST: str = "0.0.0.0"
     BASE_HOSTNAME_URL: str = "http://127.0.0.1:5000"
-    PRONUNCIATION_DIR: str = "./data/"
+    PRONUNCIATION_DIR: str = "/data/"
 
     REDIS_HOST: str
     REDIS_PORT: int
